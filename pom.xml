@@ -13,17 +13,17 @@
 	<artifactId>system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>system</name>
-	<description>CMPG323 Project 1 (11185058)</description>
+	<description>CMPG323_Project_1_(11185058)</description>
 
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
-<!--		<dependency>-->
-<!--			<groupId>org.springframework.boot</groupId>-->
-<!--			<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
