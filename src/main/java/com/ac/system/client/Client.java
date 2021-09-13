@@ -2,6 +2,7 @@ package com.ac.system.client;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 @Table
@@ -21,26 +22,25 @@ public class Client {
     private String surname;
     private LocalDate dob;
     private String email;
+    @Transient
     private Integer age;
 
     public Client() {
     }
 
-    public Client(Long id, String name, String surname, LocalDate dob, String email, Integer age) {
+    public Client(Long id, String name, String surname, LocalDate dob, String email) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.dob = dob;
         this.email = email;
-        this.age = age;
     }
 
-    public Client(String name, String surname, LocalDate dob, String email, Integer age) {
+    public Client(String name, String surname, LocalDate dob, String email) {
         this.name = name;
         this.surname = surname;
         this.dob = dob;
         this.email = email;
-        this.age = age;
     }
 
     public Long getId() {
@@ -84,7 +84,7 @@ public class Client {
     }
 
     public Integer getAge() {
-        return age;
+        return Period.between(this.dob, LocalDate.now()).getYears();
     }
 
     public void setAge(Integer age) {

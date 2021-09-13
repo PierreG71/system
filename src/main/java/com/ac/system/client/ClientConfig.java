@@ -21,16 +21,14 @@ public class ClientConfig {
                     "Pierre",
                     "Gerber",
                     LocalDate.of(1971, AUGUST, 27),
-                    "pierreg@allems.co.za",
-                    50
+                    "pierreg@allems.co.za"
             );
 
             Client lilia = new Client(
                     "Lilia",
                     "de Klerk",
                     LocalDate.of(2001, MARCH, 26),
-                    "liliadeKlerk@gmail.com",
-                    20
+                    "liliadeKlerk@gmail.com"
             );
 
             repository.saveAll(
