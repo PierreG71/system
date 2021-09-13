@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ClientService {
@@ -20,5 +21,13 @@ public class ClientService {
 
     public List<Client> getClients() {
         return clientRepository.findAll();
+    }
+
+    public void addNewClient(Client client) {
+        Optional<Client> clientOptional = clientRepository.findClientByEmail(client.getEmail());
+        if (clientOptional.isPresent()){
+            throw new IllegalStateException("e-Mail already in use");
+        }
+        clientRepository.save(client);
     }
 }
